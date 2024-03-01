@@ -1,0 +1,16 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}

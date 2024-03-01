@@ -1,0 +1,44 @@
+.repositories-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+
+  list-style: none;
+
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.repositories-list .repository-item {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.repositories-list .repository-item a {
+  width: 100%;
+  height: 60px;
+
+  text-decoration: none;
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #90e0ef;
+
+  border-radius: 8px;
+}
+
+.repositories-list .repository-item a .repository-item-name {
+  font-size: 20px;
+}
+
+.repositories-list .repository-item a .repository-item-contributors-count {
+  font-size: 12px;
+}

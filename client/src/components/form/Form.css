@@ -1,0 +1,23 @@
+.repository-form {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repository-form .repository-url-input {
+  width: 70%;
+  padding: 5px;
+
+  border: 2px solid #00b4d8;
+  border-radius: 4px;
+}
+
+.repository-form .repository-form-submit {
+  width: 25%;
+  padding: 5px;
+
+  background-color: #90e0ef;
+}
+
