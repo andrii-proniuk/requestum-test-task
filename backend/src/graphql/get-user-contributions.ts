@@ -3,7 +3,7 @@ import { IUserContributedRepositoriesResponse } from '../interfaces/user-contrib
 import { graphQlQueriesComposer } from './graphql-queries-composer';
 
 export const getUserContributions = async (user: string): Promise<string[]> => {
-  const repositoriesMap = new Map<string, boolean>();
+  const repositoriesSet = new Set<string>();
 
   let after: string | undefined;
 
@@ -23,9 +23,7 @@ export const getUserContributions = async (user: string): Promise<string[]> => {
 
       const repository = [node.owner.login, node.name].join('/');
 
-      if (!repositoriesMap.has(repository)) {
-        repositoriesMap.set(repository, true);
-      }
+      repositoriesSet.add(repository);
     });
 
     if (!response.data.user.repositoriesContributedTo.pageInfo.hasNextPage) {
@@ -35,5 +33,5 @@ export const getUserContributions = async (user: string): Promise<string[]> => {
     after = response.data.user.repositoriesContributedTo.pageInfo.endCursor;
   } while (true);
 
-  return Array.from(repositoriesMap.keys());
+  return Array.from(repositoriesSet.values());
 };
